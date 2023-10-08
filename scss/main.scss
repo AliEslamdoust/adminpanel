@@ -1,0 +1,365 @@
+@font-face {
+  font-family: materialDesignIcon;
+  src: url(../fonts/materialdesignicons-webfont.woff2);
+}
+@font-face {
+  font-family: Inter;
+  src: url(../fonts/Inter.woff2);
+}
+@font-face {
+  font-family: boxIcons;
+  src: url(../fonts/boxicons.woff2);
+}
+
+$header-bg: #1c1c36;
+$subheader-color: #a3a6b7;
+$sidebar-bg: #151529;
+$profile-bg: #2a2a50;
+$body-bg: #f2f2f7;
+$primary: #4a38b3;
+$backup: #299ddb;
+$backup-2: #f06448;
+$backup-3: #ffbe0b;
+$backup-4: #4bcd89;
+$body-btn-bg: #e4e1f4;
+$body-btn-color: #4a38b3;
+$body-btn-bg-1: #e1ebfd;
+$body-btn-color-1: #3577f1;
+$sidebar-text: #838fb9;
+$sidebar-active: #fff;
+$sidebar-disable: #a3a6b7;
+$light: #fff;
+$dark: #000;
+$primary-rgb: 75, 56, 179;
+$backup-rgb: 41, 156, 219;
+$backup-2-rgb: 240, 99, 71;
+$backup-3-rgb: 255, 190, 11;
+$backup-4-rgb: 75, 205, 137;
+$dark-rgb: 0, 0, 0;
+$light-rgb: 0, 0, 0;
+$font-icon: materialDesignIcon;
+$font-main: Inter;
+$font-box-icon: boxIcons;
+
+@keyframes moveIn {
+  0% {
+    transform: translateY(10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+* {
+  font-family: Inter, sans-serif;
+  transition: 0.3s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+}
+
+div.main-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 100vh;
+  > div {
+    &.sidebar {
+      grid-column: 1;
+      grid-row: 1;
+      background: $sidebar-bg;
+      width: 249px;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr;
+      > div.side-heading {
+        height: 70px;
+        grid-column: 1;
+        grid-row: 1;
+        > a {
+          > img {
+            height: 17px;
+          }
+        }
+      }
+      > ul.side-menu {
+        grid-column: 1;
+        grid-row: 2;
+        a:hover {
+          color: $sidebar-active !important;
+        }
+        > li {
+          &.side-head {
+            padding: 12px 20px;
+            > span {
+              font-size: 11px;
+              color: $sidebar-text;
+              text-transform: uppercase;
+            }
+          }
+          &.side-item {
+            font-size: 15px;
+            color: $sidebar-disable;
+            &.side-active {
+              color: $sidebar-active !important;
+            }
+            > a {
+              padding: 10px 24px;
+              color: inherit;
+              > span.badge {
+                right: 18px;
+                background: $backup-2;
+              }
+              > i {
+                font-style: normal;
+                font-size: 18px;
+                color: inherit;
+                &::before {
+                  font-family: $font-icon;
+                  font-size: inherit;
+                  color: inherit;
+                }
+              }
+              &.submenu-container::after {
+                content: "\f0142";
+                position: absolute;
+                font-family: $font-icon;
+                font-size: 17px;
+                right: 18px;
+                top: 50%;
+                transform: translateY(-50%);
+              }
+              &.side-active::after {
+                transform: translateY(-50%) rotate(90deg);
+              }
+            }
+            > ul.submenu {
+              padding-left: 28px;
+              font-size: 13px;
+              > li {
+                color: $sidebar-disable;
+                &.side-active {
+                  color: $sidebar-active !important;
+                }
+                > a {
+                  padding: 9px 24px;
+                  color: inherit;
+                  &::before {
+                    content: "";
+                    width: 6px;
+                    height: 1.5px;
+                    background-color: $sidebar-disable;
+                    position: absolute;
+                    left: 2px;
+                    top: 16px;
+                    &.side-active {
+                      background-color: $sidebar-active;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &.main-body {
+      grid-column: 2;
+      grid-row: 1;
+      background: $body-bg;
+      > div {
+        &.header {
+          background: $header-bg;
+          height: 70px;
+          > div.nav {
+            padding: 0 24px 0 12px;
+            > div {
+              &.left {
+                > div.menu-btn {
+                  width: max-content;
+                  height: max-content;
+                  > span {
+                    height: 2px;
+                    background: $subheader-color;
+                    border-radius: 50px;
+                    &:nth-child(1) {
+                      width: 17px;
+                    }
+                    &:nth-child(2) {
+                      width: 20px;
+                    }
+                    &:nth-child(3) {
+                      width: 12px;
+                    }
+                  }
+                }
+                > form {
+                  padding-left: 10px;
+                  padding-right: 30px;
+                  color: $light;
+                  background: rgba(255, 255, 255, 0.05);
+                  max-height: 38px;
+                  > button {
+                    font-size: 18px;
+                    background: transparent;
+                    border: unset;
+                    color: $subheader-color;
+                    &::before {
+                      content: "\f0349";
+                      font-family: $font-icon;
+                      font-size: inherit;
+                      color: inherit;
+                    }
+                    &.reset {
+                      top: 50%;
+                      right: 4px;
+                      transform: translateY(-50%);
+                      color: $subheader-color;
+                      &::before {
+                        content: "\f0159";
+                        font-family: $font-icon;
+                      }
+                    }
+                  }
+                  > input {
+                    font-size: 13px;
+                    background: transparent;
+                    outline: none;
+                    border: unset;
+                    color: inherit;
+                    &:valid + button {
+                      display: block !important;
+                    }
+                  }
+                }
+              }
+              &.right {
+                > div.btn-container {
+                  > button {
+                    color: $subheader-color;
+                    width: 42px;
+                    height: 42px;
+                    position: relative;
+                    > img {
+                      width: 20px;
+                      height: 20px;
+                    }
+                    &:focus {
+                      color: $backup;
+                    }
+                    &:hover {
+                      background: rgba(255, 255, 255, 0.25) !important;
+                    }
+                    i::before {
+                      font-family: $font-box-icon !important;
+                      font-size: 22px;
+                      color: inherit;
+                      font-style: normal;
+                    }
+                    &:nth-child(2) > i::before {
+                      content: "\ea3a";
+                    }
+                    &:nth-child(3) {
+                      > i::before {
+                        content: "\ec0b";
+                      }
+                      > span {
+                        background: $backup;
+                      }
+                    }
+                    &:nth-child(4) > i::before {
+                      content: "\eaeb";
+                    }
+                    &:nth-child(5) > i::before {
+                      content: "\eb94";
+                    }
+                    &:nth-child(6) {
+                      > i::before {
+                        content: "\e9d2";
+                      }
+                      > span {
+                        background: $backup-2;
+                      }
+                    }
+                    > span {
+                      right: 0;
+                      font-size: 10px;
+                    }
+                  }
+                }
+                > button {
+                  background: $profile-bg;
+                  > div {
+                    grid-template-columns: auto 1fr;
+                    grid-template-rows: repeat(2, 16px);
+                    padding: 8px 15px 8px 15px;
+                    > img {
+                      height: 32px;
+                      width: 32px;
+                      grid-row: 1/-1;
+                      grid-column: 1;
+                    }
+                    > span {
+                      &:nth-of-type(1) {
+                        font-size: 13px;
+                        color: $light;
+                        grid-row: 1;
+                        grid-column: 2;
+                      }
+                      &:nth-of-type(2) {
+                        font-size: 12px;
+                        color: $subheader-color;
+                        grid-row: 2;
+                        grid-column: 2;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//
+
+// header
+// "\f0349" search
+// "\ea3a" menu btn
+// "\ec0b" shop bag
+// "\eaeb" bracket
+// "\eb94" moon
+// "\ec34" sun
+// "\e9d2" bell
+
+// sidebar
+// "\e9d2" dashboard
+// "\f11da" apps
+// "\f1486" layouts
+// "\f0b55" authentication
+// "\f178f" pages
+// "\f096" landing
+// "\f01a7" base ui
+// "\f0f59" advanced ui
+// "\f0a66" widgets
+// "\f1401" forms
+// "\f0758" tables
+// "\f07af" charts
+// "\f0034" icons
+// "\f07d9" maps
+// "\f1514" multi level
+// "\f0142" chevron right
+// "Material Design Icons" font-icon
+
+// body
+// "\f0054" right
+// "\f08bb" settings
+// "\ea70" upright
+// "\ea6a" bottomright
+// "\eaad" dollar sign
+// "\ec0b" shop bag
+// "\ec65" profile
+// "\ec78" wallet
+// "\ea76" top
+// "\ea99" bars
+// "\f0140" chevron bottom
+// "\ecef" report
