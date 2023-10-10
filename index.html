@@ -4,17 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="./bootstrap/dist/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.min.css" />
     <script src="./bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="./scss/main.css" />
     <link rel="stylesheet" href="./scss/icons.css" />
   </head>
   <body>
-    <div class="main-container">
-      <div class="sidebar d-grid">
+    <div class="main-container d-flex">
+      <div class="sidebar d-grid position-sticky top-0 left">
         <div
           class="side-heading d-flex align-items-center justify-content-center w-100"
         >
@@ -41,7 +38,7 @@
               <i class="dashboard"></i>
               <span>Dashboards</span>
             </a>
-            <ul class="submenu list-unstyled collapse" id="submenu-1">
+            <ul class="submenu list-unstyled collapse show" id="submenu-1">
               <li class="side-active">
                 <a
                   href="#"
@@ -110,42 +107,651 @@
                 <a
                   href="#"
                   class="d-block text-decoration-none side-active position-relative"
-                  >Analytics</a
+                  >Calendar</a
                 >
               </li>
               <li>
                 <a
                   href="#"
                   class="d-block text-decoration-none position-relative"
-                  >CRM</a
+                  >Chat</a
                 >
               </li>
               <li>
                 <a
                   href="#"
-                  class="d-block text-decoration-none position-relative"
+                  class="d-block text-decoration-none position-relative submenu-container"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#s-submenu-1"
+                  aria-expanded="false"
+                  aria-controls="s-submenu-1"
+                  >Email</a
+                >
+                <ul class="submenu list-unstyled collapse" id="s-submenu-1">
+                  <li><a href="#" class="text-decoration-none">Mailbox</a></li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-decoration-none submenu-container"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#s-s-submenu-1"
+                      aria-expanded="false"
+                      aria-controls="s-s-submenu-1"
+                      >Email Templates</a
+                    >
+
+                    <ul
+                      class="submenu list-unstyled collapse"
+                      id="s-s-submenu-1"
+                    >
+                      <li>
+                        <a href="#" class="text-decoration-none"
+                          >Basic Action</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" class="text-decoration-none"
+                          >Ecommerce Action</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative submenu-container"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#s-submenu-2"
+                  aria-expanded="false"
+                  aria-controls="s-submenu-2"
                   >Ecommerce</a
                 >
+                <ul class="submenu list-unstyled collapse" id="s-submenu-2">
+                  <li><a href="#" class="text-decoration-none">Products</a></li>
+                  <li>
+                    <a href="#" class="text-decoration-none">Product Details</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-decoration-none">Create Product</a>
+                  </li>
+                  <li><a href="#" class="text-decoration-none">Products</a></li>
+                  <li><a href="#" class="text-decoration-none">Orders</a></li>
+                  <li>
+                    <a href="#" class="text-decoration-none">Order Details</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-decoration-none">Customers</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-decoration-none">Shopping Cart</a>
+                  </li>
+                  <li><a href="#" class="text-decoration-none">Checkout</a></li>
+                  <li><a href="#" class="text-decoration-none">Sellers</a></li>
+                  <li>
+                    <a href="#" class="text-decoration-none">Seller Details</a>
+                  </li>
+                </ul>
               </li>
               <li>
                 <a
                   href="#"
-                  class="d-block text-decoration-none position-relative"
-                  >Crypto</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="d-block text-decoration-none position-relative"
+                  class="d-block text-decoration-none position-relative submenu-container"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#s-submenu-3"
+                  aria-expanded="false"
+                  aria-controls="s-submenu-3"
                   >Projects</a
                 >
+                <ul class="submenu list-unstyled collapse" id="s-submenu-3">
+                  <li><a href="#" class="text-decoration-none">List</a></li>
+                  <li><a href="#" class="text-decoration-none">Overview</a></li>
+                  <li>
+                    <a href="#" class="text-decoration-none">Create Project</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative submenu-container"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#s-submenu-4"
+                  aria-expanded="false"
+                  aria-controls="s-submenu-4"
+                  >Tasks</a
+                >
+                <ul class="submenu list-unstyled collapse" id="s-submenu-4">
+                  <li>
+                    <a href="#" class="text-decoration-none">Kanban Board</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-decoration-none">List View</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-decoration-none">Task Details</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative submenu-container"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#s-submenu-5"
+                  aria-expanded="false"
+                  aria-controls="s-submenu-5"
+                  >CRM</a
+                >
+                <ul class="submenu list-unstyled collapse" id="s-submenu-5">
+                  <li><a href="#" class="text-decoration-none">Contacts</a></li>
+                  <li>
+                    <a href="#" class="text-decoration-none">Companies</a>
+                  </li>
+                  <li><a href="#" class="text-decoration-none">Deals</a></li>
+                  <li><a href="#" class="text-decoration-none">Leads</a></li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative submenu-container"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#s-submenu-6"
+                  aria-expanded="false"
+                  aria-controls="s-submenu-6"
+                  >Crypto</a
+                >
+                <ul class="submenu list-unstyled collapse" id="s-submenu-6">
+                  <li>
+                    <a href="#" class="text-decoration-none">Transactions</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-decoration-none">Buy & Sell</a>
+                  </li>
+                  <li><a href="#" class="text-decoration-none">Orders</a></li>
+                  <li>
+                    <a href="#" class="text-decoration-none">My Wallet</a>
+                  </li>
+                  <li><a href="#" class="text-decoration-none">ICO List</a></li>
+                  <li>
+                    <a href="#" class="text-decoration-none">KYC Application</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative submenu-container"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#s-submenu-7"
+                  aria-expanded="false"
+                  aria-controls="s-submenu-7"
+                  >Invoices</a
+                >
+                <ul class="submenu list-unstyled collapse" id="s-submenu-7">
+                  <li>
+                    <a href="#" class="text-decoration-none">List View</a>
+                  </li>
+                  <li><a href="#" class="text-decoration-none">Details</a></li>
+                  <li>
+                    <a href="#" class="text-decoration-none">Create Invoice</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative submenu-container"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#s-submenu-8"
+                  aria-expanded="false"
+                  aria-controls="s-submenu-8"
+                  >Support Tickets</a
+                >
+                <ul class="submenu list-unstyled collapse" id="s-submenu-8">
+                  <li>
+                    <a href="#" class="text-decoration-none">List View</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-decoration-none">Ticket Details</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative submenu-container"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#s-submenu-9"
+                  aria-expanded="false"
+                  aria-controls="s-submenu-9"
+                  >NFT Marketplace</a
+                >
+                <ul class="submenu list-unstyled collapse" id="s-submenu-9">
+                  <li><a href="#" class="text-decoration-none">Mailbox</a></li>
+                  <li>
+                    <a href="#" class="text-decoration-none">Explore Now</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-decoration-none">Live Auction</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-decoration-none">Item Details</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-decoration-none">Collections</a>
+                  </li>
+                  <li><a href="#" class="text-decoration-none">Creators</a></li>
+                  <li><a href="#" class="text-decoration-none">Ranking</a></li>
+                  <li>
+                    <a href="#" class="text-decoration-none">Wallet Connect</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-decoration-none">Create NFT</a>
+                  </li>
+                </ul>
               </li>
               <li>
                 <a
                   href="#"
                   class="d-block text-decoration-none position-relative"
-                  >NFT</a
+                  >File Manager</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative"
+                  >To Do</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative submenu-container"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#s-submenu-11"
+                  aria-expanded="false"
+                  aria-controls="s-submenu-11"
+                  >Jobs</a
+                >
+                <ul class="submenu list-unstyled collapse" id="s-submenu-11">
+                  <li>
+                    <a href="#" class="text-decoration-none">Statistics</a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-decoration-none submenu-container"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#s-s-submenu-2"
+                      aria-expanded="false"
+                      aria-controls="s-s-submenu-2"
+                      >Job Lists</a
+                    >
+
+                    <ul
+                      class="submenu list-unstyled collapse"
+                      id="s-s-submenu-2"
+                    >
+                      <li>
+                        <a href="#" class="text-decoration-none">List</a>
+                      </li>
+                      <li>
+                        <a href="#" class="text-decoration-none">Grid</a>
+                      </li>
+                      <li>
+                        <a href="#" class="text-decoration-none">Overview</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-decoration-none submenu-container"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#s-s-submenu-3"
+                      aria-expanded="false"
+                      aria-controls="s-s-submenu-3"
+                      >Candidate Lists</a
+                    >
+
+                    <ul
+                      class="submenu list-unstyled collapse"
+                      id="s-s-submenu-3"
+                    >
+                      <li>
+                        <a href="#" class="text-decoration-none">List View</a>
+                      </li>
+                      <li>
+                        <a href="#" class="text-decoration-none">Grid View</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#" class="text-decoration-none">Application</a>
+                  </li>
+                  <li><a href="#" class="text-decoration-none">New Job</a></li>
+                  <li>
+                    <a href="#" class="text-decoration-none">Companies List</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-decoration-none">Job Categories</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative"
+                  >API Keys</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="side-item d-flex flex-column">
+            <a
+              href=""
+              class="d-flex column-gap-2 text-decoration-none position-relative"
+            >
+              <i class="layouts"></i>
+              <span>Layouts</span>
+              <span
+                class="badge rounded-pill position-absolute top-50 translate-middle-y right"
+                >Hot!</span
+              >
+            </a>
+          </li>
+          <li class="side-head">
+            <span>Pages</span>
+          </li>
+          <li class="side-item d-flex flex-column">
+            <a
+              href=""
+              class="d-flex column-gap-2 text-decoration-none position-relative submenu-container"
+              data-bs-toggle="collapse"
+              data-bs-target="#submenu-3"
+              aria-expanded="false"
+              aria-controls="submenu-3"
+            >
+              <i class="authentication"></i>
+              <span>Authentication</span>
+            </a>
+            <ul class="submenu list-unstyled collapse" id="submenu-3">
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative submenu-container"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#s-submenu-12"
+                  aria-expanded="false"
+                  aria-controls="s-submenu-12"
+                  >Sign In</a
+                >
+                <ul class="submenu list-unstyled collapse" id="s-submenu-12">
+                  <li><a href="#" class="text-decoration-none">Basic</a></li>
+                  <li><a href="#" class="text-decoration-none">Cover</a></li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative submenu-container"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#s-submenu-13"
+                  aria-expanded="false"
+                  aria-controls="s-submenu-13"
+                  >Sign Up</a
+                >
+                <ul class="submenu list-unstyled collapse" id="s-submenu-13">
+                  <li><a href="#" class="text-decoration-none">Basic</a></li>
+                  <li><a href="#" class="text-decoration-none">Cover</a></li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative submenu-container"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#s-submenu-14"
+                  aria-expanded="false"
+                  aria-controls="s-submenu-14"
+                  >Password Reset</a
+                >
+                <ul class="submenu list-unstyled collapse" id="s-submenu-14">
+                  <li><a href="#" class="text-decoration-none">Basic</a></li>
+                  <li><a href="#" class="text-decoration-none">Cover</a></li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative submenu-container"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#s-submenu-15"
+                  aria-expanded="false"
+                  aria-controls="s-submenu-15"
+                  >Password Create</a
+                >
+                <ul class="submenu list-unstyled collapse" id="s-submenu-15">
+                  <li><a href="#" class="text-decoration-none">Basic</a></li>
+                  <li><a href="#" class="text-decoration-none">Cover</a></li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative submenu-container"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#s-submenu-16"
+                  aria-expanded="false"
+                  aria-controls="s-submenu-16"
+                  >Lock Screen</a
+                >
+                <ul class="submenu list-unstyled collapse" id="s-submenu-16">
+                  <li><a href="#" class="text-decoration-none">Basic</a></li>
+                  <li><a href="#" class="text-decoration-none">Cover</a></li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative submenu-container"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#s-submenu-17"
+                  aria-expanded="false"
+                  aria-controls="s-submenu-17"
+                  >Logout</a
+                >
+                <ul class="submenu list-unstyled collapse" id="s-submenu-17">
+                  <li><a href="#" class="text-decoration-none">Basic</a></li>
+                  <li><a href="#" class="text-decoration-none">Cover</a></li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative submenu-container"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#s-submenu-18"
+                  aria-expanded="false"
+                  aria-controls="s-submenu-18"
+                  >Success Message</a
+                >
+                <ul class="submenu list-unstyled collapse" id="s-submenu-18">
+                  <li><a href="#" class="text-decoration-none">Basic</a></li>
+                  <li><a href="#" class="text-decoration-none">Cover</a></li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative submenu-container"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#s-submenu-19"
+                  aria-expanded="false"
+                  aria-controls="s-submenu-19"
+                  >Errors</a
+                >
+                <ul class="submenu list-unstyled collapse" id="s-submenu-19">
+                  <li>
+                    <a href="#" class="text-decoration-none">404 Basic</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-decoration-none">404 Cover</a>
+                  </li>
+                  <li><a href="#" class="text-decoration-none">404</a></li>
+                  <li><a href="#" class="text-decoration-none">500</a></li>
+                  <li>
+                    <a href="#" class="text-decoration-none">Offline Page</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="side-item d-flex flex-lg-column">
+            <a
+              href=""
+              class="d-flex column-gap-2 text-decoration-none position-relative submenu-container"
+              data-bs-toggle="collapse"
+              data-bs-target="#submenu-4"
+              aria-expanded="false"
+              aria-controls="submenu-4"
+            >
+              <i class="pages"></i>
+              <span>Pages</span>
+            </a>
+            <ul class="submenu list-unstyled collapse" id="submenu-4">
+              <li class="side-active">
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative"
+                  >Starter</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative submenu-container"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#s-submenu-20"
+                  aria-expanded="false"
+                  aria-controls="s-submenu-20"
+                  >Profile</a
+                >
+                <ul class="submenu list-unstyled collapse" id="s-submenu-20">
+                  <li>
+                    <a href="#" class="text-decoration-none">Simple Page</a>
+                  </li>
+                  <li><a href="#" class="text-decoration-none">Settings</a></li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative"
+                  >Team</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative"
+                  >Timeline</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative"
+                  >FAQs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative"
+                  >Pricing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative"
+                  >Gallery</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative"
+                  >Maintenance</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative"
+                  >Coming Soon</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative"
+                  >Sitemap</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative"
+                  >Search Results</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative"
+                  >Term & Conditions</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="side-item d-flex flex-column">
+            <a
+              href=""
+              class="d-flex column-gap-2 text-decoration-none position-relative submenu-container"
+              data-bs-toggle="collapse"
+              data-bs-target="#submenu-5"
+              aria-expanded="false"
+              aria-controls="submenu-5"
+            >
+              <i class="landing"></i>
+              <span>Landing</span>
+            </a>
+            <ul class="submenu list-unstyled collapse" id="submenu-5">
+              <li class="side-active">
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative"
+                  >One Page</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-block text-decoration-none position-relative"
+                  >NFT Landing</a
                 >
               </li>
               <li>
@@ -157,33 +763,16 @@
               </li>
             </ul>
           </li>
-          <li class="side-item d-flex flex-column">
-            <a
-              href=""
-              class="d-flex column-gap-2 text-decoration-none position-relative"
-              data-bs-toggle="collapse"
-              data-bs-target="#submenu-2"
-              aria-expanded="false"
-              aria-controls="submenu-2"
-            >
-              <i class="layouts"></i>
-              <span>Layouts</span>
-              <span
-                class="badge rounded-pill position-absolute top-50 translate-middle-y right"
-                >Hot!</span
-              >
-            </a>
-          </li>
         </ul>
       </div>
-      <div class="main-body position-relative">
+      <div class="main-body position-relative flex-grow-1">
         <div class="header position-sticky sticky-top w-100">
           <div
             class="nav d-flex align-items-center justify-content-between h-100"
           >
             <div class="left d-flex align-items-center">
               <div
-                class="menu-btn d-flex flex-column justify-content-between px-3 row-gap-1"
+                class="menu-btn d-flex flex-column justify-content-between px-3 row-gap-1" 
               >
                 <span></span><span></span><span></span>
               </div>
@@ -261,6 +850,166 @@
                   <span>Founder</span>
                 </div>
               </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="analytics d-flex justify-content-between align-items-center"
+        >
+          <h4 class="text-uppercase fw-bold m-0">Analytics</h4>
+          <ul class="breadcrumb m-0" style="--bs-breadcrumb-divider: '>'">
+            <li class="breadcrumb-item"><a href="#">Dasboards</a></li>
+            <li class="breadcrumb-item active">Analytics</li>
+          </ul>
+        </div>
+        <div class="body-items">
+          <div class="row w-100">
+            <div class="col-5">
+              <div class="row w-100 m-0">
+                <div class="col-12 upgrade">
+                  <div class="upgrade-mb">
+                    <div
+                      class="d-flex flex-column align-items-center upgrade-container"
+                    >
+                      <div
+                        class="alert d-flex align-items-center justify-content-between rounded-0 m-0 w-100"
+                      >
+                        <div class="left-alert d-flex align-items-center">
+                          <img
+                            class="me-2 object-fit-contain"
+                            src="./media/svgexport-2.svg"
+                            alt=""
+                          />
+                          <span
+                            >Your free trial expired in <b>17</b> days.</span
+                          >
+                        </div>
+                        <a href="#" class="fw-medium d-block">Upgrade</a>
+                      </div>
+                      <div
+                        class="upgrade-body row align-items-end bg-white w-100 px-0 rounded-bottom-1 overflow-hidden"
+                      >
+                        <div class="col-8 p-3 upgrade-text">
+                          <p>
+                            Upgrade your plan from a <b>Free trial</b>, to
+                            ‘Premium Plan’
+                          </p>
+                          <button class="text-white rounded-1 btn border-0">
+                            Upgrade Account
+                          </button>
+                        </div>
+                        <div class="col-4 bg-white px-0">
+                          <div class="px-3">
+                            <img
+                              class="w-100 h-auto"
+                              src="./media/user-illustarator-2.png"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row w-100 m-0 p-0">
+                  <div class="col-6 card-px">
+                    <div class="card border-0 bg-transparent">
+                      <div class="card-body d-flex flex-row-reverse border-0 bg-white">
+                        <div class="card-img w-auto">
+                          <div class="c-img-container d-flex align-items-center justify-content-center card-1 rounded-circle">
+                            <img src="./media/svgexport-3.svg" alt="" />
+                          </div>
+                        </div>
+                        <div class="c-body d-flex flex-column">
+                          <p class="card-txt m-0">Users</p>
+                          <h2 class="card-num h2 fw-semibold">
+                            <span>28.05</span>k
+                          </h2>
+                          <p class="card-btm m-0">
+                            <span class="badge card-up">16.24 %</span> vs.
+                            previous month
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 card-px">
+                    <div class="card border-0 bg-transparent">
+                      <div class="card-body d-flex flex-row-reverse border-0 bg-white">
+                        <div class="card-img w-auto">
+                          <div class="c-img-container d-flex align-items-center justify-content-center card-2 rounded-circle">
+                            <img src="./media/svgexport-4.svg" alt="" />
+                          </div>
+                        </div>
+                        <div class="c-body d-flex flex-column">
+                          <p class="card-txt m-0">Sessions</p>
+                          <h2 class="card-num h2 fw-semibold">
+                            <span>97.66</span>k
+                          </h2>
+                          <p class="card-btm m-0">
+                            <span class="badge card-down">3.96 %</span> vs.
+                            previous month
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row w-100 m-0 p-0">
+                  <div class="col-6 card-px">
+                    <div class="card border-0 bg-transparent">
+                      <div class="card-body d-flex flex-row-reverse border-0 bg-white">
+                        <div class="card-img w-auto">
+                          <div class="c-img-container d-flex align-items-center justify-content-center card-3 rounded-circle">
+                            <img src="./media/svgexport-5.svg" alt="" />
+                          </div>
+                        </div>
+                        <div class="c-body d-flex flex-column">
+                          <p class="card-txt m-0">Avg. Visit Duration</p>
+                          <h2 class="card-num h2 fw-semibold">
+                            <span>3</span>m <span>40</span>sec
+                          </h2>
+                          <p class="card-btm m-0">
+                            <span class="badge card-down">0.24 %</span> vs.
+                            previous month
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 card-px">
+                    <div class="card border-0 bg-transparent">
+                      <div class="card-body d-flex flex-row-reverse border-0 bg-white">
+                        <div class="card-img w-auto">
+                          <div class="c-img-container d-flex align-items-center justify-content-center card-4 rounded-circle">
+                            <img src="./media/svgexport-6.svg" alt="" />
+                          </div>
+                        </div>
+                        <div class="c-body d-flex flex-column">
+                          <p class="card-txt m-0">Bounce Rate</p>
+                          <h2 class="card-num h2 fw-semibold">
+                            <span>33.48</span>%
+                          </h2>
+                          <p class="card-btm m-0">
+                            <span class="badge card-up">7.05 %</span> vs.
+                            previous month
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-5">
+              <div class="row w-100">
+                <div class="col-6">
+                  <div class="live-top">
+                    <h2>Live Users By Country</h2>
+                    <div class="badge">Export Report</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

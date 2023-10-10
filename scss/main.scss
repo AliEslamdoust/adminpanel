@@ -10,6 +10,14 @@
   font-family: boxIcons;
   src: url(../fonts/boxicons.woff2);
 }
+@font-face {
+  font-family: remixIcons;
+  src: url(../fonts/remixicon.woff2);
+}
+@font-face {
+  font-family: remixIcons;
+  src: url(../fonts/remixicon.woff2);
+}
 
 $header-bg: #1c1c36;
 $subheader-color: #a3a6b7;
@@ -21,6 +29,8 @@ $backup: #299ddb;
 $backup-2: #f06448;
 $backup-3: #ffbe0b;
 $backup-4: #4bcd89;
+$backup-4-dark: #3bad71;
+$backup-4-light: rgb(69, 203, 133);
 $body-btn-bg: #e4e1f4;
 $body-btn-color: #4a38b3;
 $body-btn-bg-1: #e1ebfd;
@@ -40,6 +50,17 @@ $light-rgb: 0, 0, 0;
 $font-icon: materialDesignIcon;
 $font-main: Inter;
 $font-box-icon: boxIcons;
+$font-remix-icon: remixIcons;
+$text-main-color: #212529;
+$text-heading-color: #495057;
+$text-light-color: #878a99;
+$bg-success: #45cb85;
+$bg-danger: #f06548;
+$color-warning: #d9a209;
+$bg-warning: #fff5da;
+$main-shadow: 0 3px 3px rgba(56, 65, 74, 0.1);
+$hover-shadow: 0 5px 10px rgba(30, 32, 37, 0.12);
+$light-bg: #f3f6f9;
 
 @keyframes moveIn {
   0% {
@@ -56,18 +77,15 @@ $font-box-icon: boxIcons;
 }
 
 div.main-container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: 100vh;
   > div {
     &.sidebar {
-      grid-column: 1;
-      grid-row: 1;
       background: $sidebar-bg;
       width: 249px;
+      max-width: 249px;
+      min-width: 249px;
       grid-template-columns: 1fr;
       grid-template-rows: auto 1fr;
+      height: 100vh;
       > div.side-heading {
         height: 70px;
         grid-column: 1;
@@ -140,6 +158,7 @@ div.main-container {
                 > a {
                   padding: 9px 24px;
                   color: inherit;
+                  position: relative;
                   &::before {
                     content: "";
                     width: 6px;
@@ -148,8 +167,62 @@ div.main-container {
                     position: absolute;
                     left: 2px;
                     top: 16px;
-                    &.side-active {
-                      background-color: $sidebar-active;
+                  }
+                  &.side-active::before {
+                    background-color: $sidebar-active;
+                  }
+                  &.submenu-container::after {
+                    content: "\f0142";
+                    position: absolute;
+                    font-family: $font-icon;
+                    font-size: 17px;
+                    right: 18px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                  }
+                  &.side-active::after {
+                    transform: translateY(-50%) rotate(90deg);
+                  }
+                }
+                ul.submenu {
+                  padding-left: 15px;
+                  font-size: 13px;
+                  > li {
+                    color: $sidebar-disable;
+                    > a {
+                      position: relative;
+                      display: flex;
+                      align-items: center;
+                      padding: 9px 24px;
+                      font-size: inherit;
+                      color: inherit;
+                      &::before {
+                        content: "";
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 50%;
+                        border: 1px solid $sidebar-disable;
+                        box-sizing: border-box;
+                        position: absolute;
+                        transition: 0.3s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+                        left: 4px;
+                      }
+                      &:hover::before {
+                        border: 1px solid transparent !important;
+                        background: $sidebar-active !important;
+                      }
+                      &.submenu-container::after {
+                        content: "\f0142";
+                        position: absolute;
+                        font-family: $font-icon;
+                        font-size: 17px;
+                        right: 18px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                      }
+                      &.side-active::after {
+                        transform: translateY(-50%) rotate(90deg);
+                      }
                     }
                   }
                 }
@@ -160,8 +233,6 @@ div.main-container {
       }
     }
     &.main-body {
-      grid-column: 2;
-      grid-row: 1;
       background: $body-bg;
       > div {
         &.header {
@@ -309,6 +380,156 @@ div.main-container {
                         grid-column: 2;
                       }
                     }
+                  }
+                }
+              }
+            }
+          }
+        }
+        &.analytics {
+          background: $light;
+          padding: 10px 24px;
+          font-size: 13px;
+          color: $text-main-color;
+          box-shadow: $main-shadow;
+          max-height: 40px;
+          > h4 {
+            font-size: 15px;
+          }
+          > ul.breadcrumb {
+            > li {
+              > a {
+                color: inherit;
+                text-decoration: none;
+              }
+              &:last-of-type > a {
+                color: $text-light-color;
+              }
+            }
+          }
+        }
+      }
+    }
+    div.body-items {
+      padding: 24px 16px 60px;
+    }
+    div.upgrade {
+      padding: 0 12px;
+      > div.upgrade-mb {
+        margin-bottom: 24px;
+      }
+      div.upgrade-container {
+        box-shadow: $main-shadow;
+      }
+      div.alert {
+        background: $bg-warning;
+        color: $color-warning;
+        font-size: 13px;
+        > div.left-alert {
+          > img {
+            width: 18px;
+            height: 18px;
+          }
+        }
+        > a {
+          color: inherit;
+        }
+      }
+      div.upgrade-body {
+        div.upgrade-text {
+          background: $light;
+          color: $text-main-color;
+          font-size: 16px;
+          > p {
+            color: inherit;
+            font-size: inherit;
+            &::after {
+              content: "\f0054";
+              font-family: $font-icon;
+              color: inherit;
+              font-size: inherit;
+            }
+          }
+          > button {
+            font-size: 13px;
+            background: $backup-4;
+            &:hover {
+              background: $backup-4-dark;
+            }
+            &:focus {
+              background: $backup-4-light;
+            }
+          }
+        }
+      }
+    }
+    div.card-px {
+      padding: 0 12px;
+      > div.card {
+        margin-bottom: 24px;
+        > div.card-body {
+          box-shadow: $main-shadow;
+          font-size: 13px;
+          color: $text-main-color;
+          &:hover {
+            transform: translateY(-2.5%);
+            box-shadow: $hover-shadow;
+          }
+          div.card-img {
+            > div.c-img-container {
+              width: 48px;
+              height: 48px;
+              > img {
+                width: 24px;
+                height: 24px;
+                object-fit: contain;
+              }
+              &.card-1 {
+                background: $primary;
+              }
+              &.card-2 {
+                background: $backup-2;
+              }
+              &.card-3 {
+                background: $backup-3;
+              }
+              &.card-4 {
+                background: $backup-4;
+              }
+            }
+          }
+          div.c-body {
+            > p.card-txt {
+              color: $text-light-color;
+            }
+            > h2 {
+              color: $text-heading-color;
+              margin: 24px 0 8px !important;
+              font-size: 26px;
+            }
+            > p.card-btm {
+              color: $text-light-color;
+              > span {
+                background: $light-bg;
+                font-size: 10px;
+                color: inherit;
+                width: max-content;
+                &::before {
+                  font-family: $font-remix-icon;
+                  font-size: inherit;
+                  color: inherit;
+                  margin-right: 2px;
+                }
+                &.card-down {
+                  color: $bg-danger;
+                  &::before {
+                    content: "\ea4c";
+                  }
+                }
+                &.card-up {
+                  color: $bg-success;
+                  &::before {
+                    content: "\ea76";
                   }
                 }
               }

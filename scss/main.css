@@ -7,6 +7,12 @@
 @font-face {
   font-family: boxIcons;
   src: url(../fonts/boxicons.woff2); }
+@font-face {
+  font-family: remixIcons;
+  src: url(../fonts/remixicon.woff2); }
+@font-face {
+  font-family: remixIcons;
+  src: url(../fonts/remixicon.woff2); }
 @keyframes moveIn {
   0% {
     transform: translateY(10%); }
@@ -16,192 +22,334 @@
   font-family: Inter, sans-serif;
   transition: 0.3s cubic-bezier(0.8, 0.5, 0.2, 1.4); }
 
-div.main-container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: 100vh; }
-  div.main-container > div.sidebar {
+div.main-container > div.sidebar {
+  background: #151529;
+  width: 249px;
+  max-width: 249px;
+  min-width: 249px;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh; }
+  div.main-container > div.sidebar > div.side-heading {
+    height: 70px;
     grid-column: 1;
-    grid-row: 1;
-    background: #151529;
-    width: 249px;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr; }
-    div.main-container > div.sidebar > div.side-heading {
-      height: 70px;
-      grid-column: 1;
-      grid-row: 1; }
-      div.main-container > div.sidebar > div.side-heading > a > img {
-        height: 17px; }
-    div.main-container > div.sidebar > ul.side-menu {
-      grid-column: 1;
-      grid-row: 2; }
-      div.main-container > div.sidebar > ul.side-menu a:hover {
+    grid-row: 1; }
+    div.main-container > div.sidebar > div.side-heading > a > img {
+      height: 17px; }
+  div.main-container > div.sidebar > ul.side-menu {
+    grid-column: 1;
+    grid-row: 2; }
+    div.main-container > div.sidebar > ul.side-menu a:hover {
+      color: #fff !important; }
+    div.main-container > div.sidebar > ul.side-menu > li.side-head {
+      padding: 12px 20px; }
+      div.main-container > div.sidebar > ul.side-menu > li.side-head > span {
+        font-size: 11px;
+        color: #838fb9;
+        text-transform: uppercase; }
+    div.main-container > div.sidebar > ul.side-menu > li.side-item {
+      font-size: 15px;
+      color: #a3a6b7; }
+      div.main-container > div.sidebar > ul.side-menu > li.side-item.side-active {
         color: #fff !important; }
-      div.main-container > div.sidebar > ul.side-menu > li.side-head {
-        padding: 12px 20px; }
-        div.main-container > div.sidebar > ul.side-menu > li.side-head > span {
-          font-size: 11px;
-          color: #838fb9;
-          text-transform: uppercase; }
-      div.main-container > div.sidebar > ul.side-menu > li.side-item {
-        font-size: 15px;
-        color: #a3a6b7; }
-        div.main-container > div.sidebar > ul.side-menu > li.side-item.side-active {
-          color: #fff !important; }
-        div.main-container > div.sidebar > ul.side-menu > li.side-item > a {
-          padding: 10px 24px;
+      div.main-container > div.sidebar > ul.side-menu > li.side-item > a {
+        padding: 10px 24px;
+        color: inherit; }
+        div.main-container > div.sidebar > ul.side-menu > li.side-item > a > span.badge {
+          right: 18px;
+          background: #f06448; }
+        div.main-container > div.sidebar > ul.side-menu > li.side-item > a > i {
+          font-style: normal;
+          font-size: 18px;
           color: inherit; }
-          div.main-container > div.sidebar > ul.side-menu > li.side-item > a > span.badge {
-            right: 18px;
-            background: #f06448; }
-          div.main-container > div.sidebar > ul.side-menu > li.side-item > a > i {
-            font-style: normal;
-            font-size: 18px;
-            color: inherit; }
-            div.main-container > div.sidebar > ul.side-menu > li.side-item > a > i::before {
-              font-family: materialDesignIcon;
-              font-size: inherit;
-              color: inherit; }
-          div.main-container > div.sidebar > ul.side-menu > li.side-item > a.submenu-container::after {
-            content: "\f0142";
-            position: absolute;
+          div.main-container > div.sidebar > ul.side-menu > li.side-item > a > i::before {
             font-family: materialDesignIcon;
-            font-size: 17px;
-            right: 18px;
-            top: 50%;
-            transform: translateY(-50%); }
-          div.main-container > div.sidebar > ul.side-menu > li.side-item > a.side-active::after {
-            transform: translateY(-50%) rotate(90deg); }
-        div.main-container > div.sidebar > ul.side-menu > li.side-item > ul.submenu {
-          padding-left: 28px;
-          font-size: 13px; }
-          div.main-container > div.sidebar > ul.side-menu > li.side-item > ul.submenu > li {
-            color: #a3a6b7; }
-            div.main-container > div.sidebar > ul.side-menu > li.side-item > ul.submenu > li.side-active {
-              color: #fff !important; }
-            div.main-container > div.sidebar > ul.side-menu > li.side-item > ul.submenu > li > a {
-              padding: 9px 24px;
-              color: inherit; }
-              div.main-container > div.sidebar > ul.side-menu > li.side-item > ul.submenu > li > a::before {
-                content: "";
-                width: 6px;
-                height: 1.5px;
-                background-color: #a3a6b7;
-                position: absolute;
-                left: 2px;
-                top: 16px; }
-                div.main-container > div.sidebar > ul.side-menu > li.side-item > ul.submenu > li > a::before.side-active {
-                  background-color: #fff; }
-  div.main-container > div.main-body {
-    grid-column: 2;
-    grid-row: 1;
-    background: #f2f2f7; }
-    div.main-container > div.main-body > div.header {
-      background: #1c1c36;
-      height: 70px; }
-      div.main-container > div.main-body > div.header > div.nav {
-        padding: 0 24px 0 12px; }
-        div.main-container > div.main-body > div.header > div.nav > div.left > div.menu-btn {
-          width: max-content;
-          height: max-content; }
-          div.main-container > div.main-body > div.header > div.nav > div.left > div.menu-btn > span {
-            height: 2px;
-            background: #a3a6b7;
-            border-radius: 50px; }
-            div.main-container > div.main-body > div.header > div.nav > div.left > div.menu-btn > span:nth-child(1) {
-              width: 17px; }
-            div.main-container > div.main-body > div.header > div.nav > div.left > div.menu-btn > span:nth-child(2) {
-              width: 20px; }
-            div.main-container > div.main-body > div.header > div.nav > div.left > div.menu-btn > span:nth-child(3) {
-              width: 12px; }
-        div.main-container > div.main-body > div.header > div.nav > div.left > form {
-          padding-left: 10px;
-          padding-right: 30px;
-          color: #fff;
-          background: rgba(255, 255, 255, 0.05);
-          max-height: 38px; }
-          div.main-container > div.main-body > div.header > div.nav > div.left > form > button {
-            font-size: 18px;
-            background: transparent;
-            border: unset;
-            color: #a3a6b7; }
-            div.main-container > div.main-body > div.header > div.nav > div.left > form > button::before {
-              content: "\f0349";
-              font-family: materialDesignIcon;
-              font-size: inherit;
-              color: inherit; }
-            div.main-container > div.main-body > div.header > div.nav > div.left > form > button.reset {
-              top: 50%;
-              right: 4px;
-              transform: translateY(-50%);
-              color: #a3a6b7; }
-              div.main-container > div.main-body > div.header > div.nav > div.left > form > button.reset::before {
-                content: "\f0159";
-                font-family: materialDesignIcon; }
-          div.main-container > div.main-body > div.header > div.nav > div.left > form > input {
-            font-size: 13px;
-            background: transparent;
-            outline: none;
-            border: unset;
+            font-size: inherit;
             color: inherit; }
-            div.main-container > div.main-body > div.header > div.nav > div.left > form > input:valid + button {
-              display: block !important; }
-        div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button {
-          color: #a3a6b7;
-          width: 42px;
-          height: 42px;
-          position: relative; }
-          div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button > img {
-            width: 20px;
-            height: 20px; }
-          div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button:focus {
-            color: #299ddb; }
-          div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button:hover {
-            background: rgba(255, 255, 255, 0.25) !important; }
-          div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button i::before {
-            font-family: boxIcons !important;
-            font-size: 22px;
+        div.main-container > div.sidebar > ul.side-menu > li.side-item > a.submenu-container::after {
+          content: "\f0142";
+          position: absolute;
+          font-family: materialDesignIcon;
+          font-size: 17px;
+          right: 18px;
+          top: 50%;
+          transform: translateY(-50%); }
+        div.main-container > div.sidebar > ul.side-menu > li.side-item > a.side-active::after {
+          transform: translateY(-50%) rotate(90deg); }
+      div.main-container > div.sidebar > ul.side-menu > li.side-item > ul.submenu {
+        padding-left: 28px;
+        font-size: 13px; }
+        div.main-container > div.sidebar > ul.side-menu > li.side-item > ul.submenu > li {
+          color: #a3a6b7; }
+          div.main-container > div.sidebar > ul.side-menu > li.side-item > ul.submenu > li.side-active {
+            color: #fff !important; }
+          div.main-container > div.sidebar > ul.side-menu > li.side-item > ul.submenu > li > a {
+            padding: 9px 24px;
             color: inherit;
-            font-style: normal; }
-          div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button:nth-child(2) > i::before {
-            content: "\ea3a"; }
-          div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button:nth-child(3) > i::before {
-            content: "\ec0b"; }
-          div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button:nth-child(3) > span {
-            background: #299ddb; }
-          div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button:nth-child(4) > i::before {
-            content: "\eaeb"; }
-          div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button:nth-child(5) > i::before {
-            content: "\eb94"; }
-          div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button:nth-child(6) > i::before {
-            content: "\e9d2"; }
-          div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button:nth-child(6) > span {
-            background: #f06448; }
-          div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button > span {
-            right: 0;
-            font-size: 10px; }
-        div.main-container > div.main-body > div.header > div.nav > div.right > button {
-          background: #2a2a50; }
-          div.main-container > div.main-body > div.header > div.nav > div.right > button > div {
-            grid-template-columns: auto 1fr;
-            grid-template-rows: repeat(2, 16px);
-            padding: 8px 15px 8px 15px; }
-            div.main-container > div.main-body > div.header > div.nav > div.right > button > div > img {
-              height: 32px;
-              width: 32px;
-              grid-row: 1/-1;
-              grid-column: 1; }
-            div.main-container > div.main-body > div.header > div.nav > div.right > button > div > span:nth-of-type(1) {
-              font-size: 13px;
-              color: #fff;
-              grid-row: 1;
-              grid-column: 2; }
-            div.main-container > div.main-body > div.header > div.nav > div.right > button > div > span:nth-of-type(2) {
-              font-size: 12px;
-              color: #a3a6b7;
-              grid-row: 2;
-              grid-column: 2; }
+            position: relative; }
+            div.main-container > div.sidebar > ul.side-menu > li.side-item > ul.submenu > li > a::before {
+              content: "";
+              width: 6px;
+              height: 1.5px;
+              background-color: #a3a6b7;
+              position: absolute;
+              left: 2px;
+              top: 16px; }
+            div.main-container > div.sidebar > ul.side-menu > li.side-item > ul.submenu > li > a.side-active::before {
+              background-color: #fff; }
+            div.main-container > div.sidebar > ul.side-menu > li.side-item > ul.submenu > li > a.submenu-container::after {
+              content: "\f0142";
+              position: absolute;
+              font-family: materialDesignIcon;
+              font-size: 17px;
+              right: 18px;
+              top: 50%;
+              transform: translateY(-50%); }
+            div.main-container > div.sidebar > ul.side-menu > li.side-item > ul.submenu > li > a.side-active::after {
+              transform: translateY(-50%) rotate(90deg); }
+          div.main-container > div.sidebar > ul.side-menu > li.side-item > ul.submenu > li ul.submenu {
+            padding-left: 15px;
+            font-size: 13px; }
+            div.main-container > div.sidebar > ul.side-menu > li.side-item > ul.submenu > li ul.submenu > li {
+              color: #a3a6b7; }
+              div.main-container > div.sidebar > ul.side-menu > li.side-item > ul.submenu > li ul.submenu > li > a {
+                position: relative;
+                display: flex;
+                align-items: center;
+                padding: 9px 24px;
+                font-size: inherit;
+                color: inherit; }
+                div.main-container > div.sidebar > ul.side-menu > li.side-item > ul.submenu > li ul.submenu > li > a::before {
+                  content: "";
+                  width: 5px;
+                  height: 5px;
+                  border-radius: 50%;
+                  border: 1px solid #a3a6b7;
+                  box-sizing: border-box;
+                  position: absolute;
+                  transition: 0.3s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+                  left: 4px; }
+                div.main-container > div.sidebar > ul.side-menu > li.side-item > ul.submenu > li ul.submenu > li > a:hover::before {
+                  border: 1px solid transparent !important;
+                  background: #fff !important; }
+                div.main-container > div.sidebar > ul.side-menu > li.side-item > ul.submenu > li ul.submenu > li > a.submenu-container::after {
+                  content: "\f0142";
+                  position: absolute;
+                  font-family: materialDesignIcon;
+                  font-size: 17px;
+                  right: 18px;
+                  top: 50%;
+                  transform: translateY(-50%); }
+                div.main-container > div.sidebar > ul.side-menu > li.side-item > ul.submenu > li ul.submenu > li > a.side-active::after {
+                  transform: translateY(-50%) rotate(90deg); }
+div.main-container > div.main-body {
+  background: #f2f2f7; }
+  div.main-container > div.main-body > div.header {
+    background: #1c1c36;
+    height: 70px; }
+    div.main-container > div.main-body > div.header > div.nav {
+      padding: 0 24px 0 12px; }
+      div.main-container > div.main-body > div.header > div.nav > div.left > div.menu-btn {
+        width: max-content;
+        height: max-content; }
+        div.main-container > div.main-body > div.header > div.nav > div.left > div.menu-btn > span {
+          height: 2px;
+          background: #a3a6b7;
+          border-radius: 50px; }
+          div.main-container > div.main-body > div.header > div.nav > div.left > div.menu-btn > span:nth-child(1) {
+            width: 17px; }
+          div.main-container > div.main-body > div.header > div.nav > div.left > div.menu-btn > span:nth-child(2) {
+            width: 20px; }
+          div.main-container > div.main-body > div.header > div.nav > div.left > div.menu-btn > span:nth-child(3) {
+            width: 12px; }
+      div.main-container > div.main-body > div.header > div.nav > div.left > form {
+        padding-left: 10px;
+        padding-right: 30px;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.05);
+        max-height: 38px; }
+        div.main-container > div.main-body > div.header > div.nav > div.left > form > button {
+          font-size: 18px;
+          background: transparent;
+          border: unset;
+          color: #a3a6b7; }
+          div.main-container > div.main-body > div.header > div.nav > div.left > form > button::before {
+            content: "\f0349";
+            font-family: materialDesignIcon;
+            font-size: inherit;
+            color: inherit; }
+          div.main-container > div.main-body > div.header > div.nav > div.left > form > button.reset {
+            top: 50%;
+            right: 4px;
+            transform: translateY(-50%);
+            color: #a3a6b7; }
+            div.main-container > div.main-body > div.header > div.nav > div.left > form > button.reset::before {
+              content: "\f0159";
+              font-family: materialDesignIcon; }
+        div.main-container > div.main-body > div.header > div.nav > div.left > form > input {
+          font-size: 13px;
+          background: transparent;
+          outline: none;
+          border: unset;
+          color: inherit; }
+          div.main-container > div.main-body > div.header > div.nav > div.left > form > input:valid + button {
+            display: block !important; }
+      div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button {
+        color: #a3a6b7;
+        width: 42px;
+        height: 42px;
+        position: relative; }
+        div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button > img {
+          width: 20px;
+          height: 20px; }
+        div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button:focus {
+          color: #299ddb; }
+        div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button:hover {
+          background: rgba(255, 255, 255, 0.25) !important; }
+        div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button i::before {
+          font-family: boxIcons !important;
+          font-size: 22px;
+          color: inherit;
+          font-style: normal; }
+        div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button:nth-child(2) > i::before {
+          content: "\ea3a"; }
+        div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button:nth-child(3) > i::before {
+          content: "\ec0b"; }
+        div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button:nth-child(3) > span {
+          background: #299ddb; }
+        div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button:nth-child(4) > i::before {
+          content: "\eaeb"; }
+        div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button:nth-child(5) > i::before {
+          content: "\eb94"; }
+        div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button:nth-child(6) > i::before {
+          content: "\e9d2"; }
+        div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button:nth-child(6) > span {
+          background: #f06448; }
+        div.main-container > div.main-body > div.header > div.nav > div.right > div.btn-container > button > span {
+          right: 0;
+          font-size: 10px; }
+      div.main-container > div.main-body > div.header > div.nav > div.right > button {
+        background: #2a2a50; }
+        div.main-container > div.main-body > div.header > div.nav > div.right > button > div {
+          grid-template-columns: auto 1fr;
+          grid-template-rows: repeat(2, 16px);
+          padding: 8px 15px 8px 15px; }
+          div.main-container > div.main-body > div.header > div.nav > div.right > button > div > img {
+            height: 32px;
+            width: 32px;
+            grid-row: 1/-1;
+            grid-column: 1; }
+          div.main-container > div.main-body > div.header > div.nav > div.right > button > div > span:nth-of-type(1) {
+            font-size: 13px;
+            color: #fff;
+            grid-row: 1;
+            grid-column: 2; }
+          div.main-container > div.main-body > div.header > div.nav > div.right > button > div > span:nth-of-type(2) {
+            font-size: 12px;
+            color: #a3a6b7;
+            grid-row: 2;
+            grid-column: 2; }
+  div.main-container > div.main-body > div.analytics {
+    background: #fff;
+    padding: 10px 24px;
+    font-size: 13px;
+    color: #212529;
+    box-shadow: 0 3px 3px rgba(56, 65, 74, 0.1);
+    max-height: 40px; }
+    div.main-container > div.main-body > div.analytics > h4 {
+      font-size: 15px; }
+    div.main-container > div.main-body > div.analytics > ul.breadcrumb > li > a {
+      color: inherit;
+      text-decoration: none; }
+    div.main-container > div.main-body > div.analytics > ul.breadcrumb > li:last-of-type > a {
+      color: #878a99; }
+div.main-container > div div.body-items {
+  padding: 24px 16px 60px; }
+div.main-container > div div.upgrade {
+  padding: 0 12px; }
+  div.main-container > div div.upgrade > div.upgrade-mb {
+    margin-bottom: 24px; }
+  div.main-container > div div.upgrade div.upgrade-container {
+    box-shadow: 0 3px 3px rgba(56, 65, 74, 0.1); }
+  div.main-container > div div.upgrade div.alert {
+    background: #fff5da;
+    color: #d9a209;
+    font-size: 13px; }
+    div.main-container > div div.upgrade div.alert > div.left-alert > img {
+      width: 18px;
+      height: 18px; }
+    div.main-container > div div.upgrade div.alert > a {
+      color: inherit; }
+  div.main-container > div div.upgrade div.upgrade-body div.upgrade-text {
+    background: #fff;
+    color: #212529;
+    font-size: 16px; }
+    div.main-container > div div.upgrade div.upgrade-body div.upgrade-text > p {
+      color: inherit;
+      font-size: inherit; }
+      div.main-container > div div.upgrade div.upgrade-body div.upgrade-text > p::after {
+        content: "\f0054";
+        font-family: materialDesignIcon;
+        color: inherit;
+        font-size: inherit; }
+    div.main-container > div div.upgrade div.upgrade-body div.upgrade-text > button {
+      font-size: 13px;
+      background: #4bcd89; }
+      div.main-container > div div.upgrade div.upgrade-body div.upgrade-text > button:hover {
+        background: #3bad71; }
+      div.main-container > div div.upgrade div.upgrade-body div.upgrade-text > button:focus {
+        background: #45cb85; }
+div.main-container > div div.card-px {
+  padding: 0 12px; }
+  div.main-container > div div.card-px > div.card {
+    margin-bottom: 24px; }
+    div.main-container > div div.card-px > div.card > div.card-body {
+      box-shadow: 0 3px 3px rgba(56, 65, 74, 0.1);
+      font-size: 13px;
+      color: #212529; }
+      div.main-container > div div.card-px > div.card > div.card-body:hover {
+        transform: translateY(-2.5%);
+        box-shadow: 0 5px 10px rgba(30, 32, 37, 0.12); }
+      div.main-container > div div.card-px > div.card > div.card-body div.card-img > div.c-img-container {
+        width: 48px;
+        height: 48px; }
+        div.main-container > div div.card-px > div.card > div.card-body div.card-img > div.c-img-container > img {
+          width: 24px;
+          height: 24px;
+          object-fit: contain; }
+        div.main-container > div div.card-px > div.card > div.card-body div.card-img > div.c-img-container.card-1 {
+          background: #4a38b3; }
+        div.main-container > div div.card-px > div.card > div.card-body div.card-img > div.c-img-container.card-2 {
+          background: #f06448; }
+        div.main-container > div div.card-px > div.card > div.card-body div.card-img > div.c-img-container.card-3 {
+          background: #ffbe0b; }
+        div.main-container > div div.card-px > div.card > div.card-body div.card-img > div.c-img-container.card-4 {
+          background: #4bcd89; }
+      div.main-container > div div.card-px > div.card > div.card-body div.c-body > p.card-txt {
+        color: #878a99; }
+      div.main-container > div div.card-px > div.card > div.card-body div.c-body > h2 {
+        color: #495057;
+        margin: 24px 0 8px !important;
+        font-size: 26px; }
+      div.main-container > div div.card-px > div.card > div.card-body div.c-body > p.card-btm {
+        color: #878a99; }
+        div.main-container > div div.card-px > div.card > div.card-body div.c-body > p.card-btm > span {
+          background: #f3f6f9;
+          font-size: 10px;
+          color: inherit;
+          width: max-content; }
+          div.main-container > div div.card-px > div.card > div.card-body div.c-body > p.card-btm > span::before {
+            font-family: remixIcons;
+            font-size: inherit;
+            color: inherit;
+            margin-right: 2px; }
+          div.main-container > div div.card-px > div.card > div.card-body div.c-body > p.card-btm > span.card-down {
+            color: #f06548; }
+            div.main-container > div div.card-px > div.card > div.card-body div.c-body > p.card-btm > span.card-down::before {
+              content: "\ea4c"; }
+          div.main-container > div div.card-px > div.card > div.card-body div.c-body > p.card-btm > span.card-up {
+            color: #45cb85; }
+            div.main-container > div div.card-px > div.card > div.card-body div.c-body > p.card-btm > span.card-up::before {
+              content: "\ea76"; }
 
 /*# sourceMappingURL=main.css.map */

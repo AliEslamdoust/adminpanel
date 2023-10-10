@@ -1,3 +1,4 @@
+
 i.dashboard::before {
   content: "\f04c5";
 }
@@ -6,4 +7,14 @@ i.apps::before {
 }
 i.layouts::before {
   content: "\f1486";
+}
+i.authentication::before {
+  content: "\f0b55";
+}
+i.pages::before {
+  content: "\f178f";
+}
+i.landing::before {
+  font-family: remixIcons !important;
+  content: "\f096";
 }
