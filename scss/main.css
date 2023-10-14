@@ -61,7 +61,8 @@ div.shipment-text > span:nth-child(11) {
 
 div.main-container {
   align-items: stretch;
-  height: 100vh; }
+  min-height: 100vh;
+  height: max-content; }
   div.main-container > div.sidebar {
     background: #151529;
     width: 249px;

@@ -90,7 +90,8 @@ $i: 0;
 
 div.main-container {
       align-items: stretch;
-      height: 100vh;
+      min-height: 100vh;
+      height: max-content;
   > div {
     &.sidebar {
       background: $sidebar-bg;
