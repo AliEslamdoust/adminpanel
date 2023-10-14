@@ -60,7 +60,8 @@ div.shipment-text > span:nth-child(11) {
   grid-row: 11; }
 
 div.main-container {
-  align-items: stretch; }
+  align-items: stretch;
+  height: 100vh; }
   div.main-container > div.sidebar {
     background: #151529;
     width: 249px;
